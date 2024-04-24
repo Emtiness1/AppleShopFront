@@ -5,6 +5,7 @@ import { IPageSlugParam, TypeParamSlug } from '@/types/page-params'
 import Product from './Product'
 import { ProductService } from '@/services/product/product.service'
 
+
 export const revalidate = 60
 
 export async function generateStaticParams() {
@@ -40,7 +41,7 @@ export async function generateMetadata({
 		description: product.description,
 		category: product.category.name,
 		openGraph: {
-			images: product?.images || [],
+			images: product?.images.images || [],
 			description: product.description
 		}
 	}
